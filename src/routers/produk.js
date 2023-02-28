@@ -5,7 +5,7 @@ const { produk } = require('../controllers');
 router.get('/', produk.getDataProduk);
 
 // GET localhost:8080/produk/2 => Ambil data semua produk berdasarkan id = 2
-// router.get('/:id', produk.getDetailProduk)
+// router.get('/:id', produk.getDetailProduk);
 
 // POST localhost:8080/produk/add => Tambah data produk ke database
 // router.post('/add', produk.addDataProduk)

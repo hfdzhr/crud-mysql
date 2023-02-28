@@ -18,13 +18,13 @@ const getDataProduk = async (req, res) => {
   if (data) {
     res.send({
       success: true,
-      message: 'Berhasil ambil data',
+      message: 'Berhasil mengambil data',
       data: data,
     });
   } else {
     res.send({
       success: false,
-      message: 'Gagal ambil data',
+      message: 'Gagal mengambil data',
     });
   }
 };

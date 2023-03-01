@@ -100,8 +100,40 @@ const editDataProduk = async (req, res) => {
   }
 };
 
+// Delete Data Produk
+const deleteDataProduk = async (req, res) => {
+  let id = req.params.id;
+
+  const result = await new Promise((resolve, reject) => {
+    connection.query(
+      'DELETE FROM produk WHERE id = ?;',
+      [id],
+      function (error, rows) {
+        if (rows) {
+          resolve(true);
+        } else {
+          reject(false);
+        }
+      }
+    );
+  });
+
+  if (result) {
+    res.send({
+      success: true,
+      message: 'Berhasil hapus data',
+    });
+  } else {
+    res.send({
+      success: false,
+      message: 'Gagal hapus data',
+    });
+  }
+};
+
 module.exports = {
   getDataProduk,
   addDataProduk,
   editDataProduk,
+  deleteDataProduk,
 };

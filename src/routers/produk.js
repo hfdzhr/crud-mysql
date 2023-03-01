@@ -14,6 +14,6 @@ router.post('/add', produk.addDataProduk);
 router.put('/edit/:id', produk.editDataProduk);
 
 // POST localhost:8080/produk/delete => Delete data produk
-// router.delete('/delete/:id', produk.deleteDataProduk)
+router.delete('/delete/:id', produk.deleteDataProduk);
 
 module.exports = router;

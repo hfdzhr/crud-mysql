@@ -90,12 +90,12 @@ const editDataProduk = async (req, res) => {
   if (result) {
     res.send({
       success: true,
-      message: 'Berhasil menambahkan data',
+      message: 'Berhasil mengubah data',
     });
   } else {
     res.send({
       success: false,
-      message: 'Gagal menambahkan data',
+      message: 'Gagal mengubah data',
     });
   }
 };

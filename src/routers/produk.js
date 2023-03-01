@@ -11,7 +11,7 @@ router.get('/', produk.getDataProduk);
 router.post('/add', produk.addDataProduk);
 
 // POST localhost:8080/produk/2 => Edit data produk
-// router.put('/edit/:id', produk.editDataProduk)
+router.put('/edit/:id', produk.editDataProduk);
 
 // POST localhost:8080/produk/delete => Delete data produk
 // router.delete('/delete/:id', produk.deleteDataProduk)

@@ -64,7 +64,44 @@ const addDataProduk = async (req, res) => {
   }
 };
 
+// Mengubah data
+const editDataProduk = async (req, res) => {
+  let id = req.params.id;
+  let dataEdit = {
+    nama: req.body.nama,
+    harga: req.body.harga,
+    stok: req.body.stok,
+  };
+
+  const result = await new Promise((resolve, reject) => {
+    connection.query(
+      'UPDATE produk SET ? WHERE id = ?;',
+      [dataEdit, id],
+      function (error, rows) {
+        if (rows) {
+          resolve(true);
+        } else {
+          reject(false);
+        }
+      }
+    );
+  });
+
+  if (result) {
+    res.send({
+      success: true,
+      message: 'Berhasil menambahkan data',
+    });
+  } else {
+    res.send({
+      success: false,
+      message: 'Gagal menambahkan data',
+    });
+  }
+};
+
 module.exports = {
   getDataProduk,
   addDataProduk,
+  editDataProduk,
 };

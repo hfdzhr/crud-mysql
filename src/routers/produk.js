@@ -10,7 +10,7 @@ router.get('/', produk.getDataProduk);
 // POST localhost:8080/produk/add => Tambah data produk ke database
 router.post('/add', produk.addDataProduk);
 
-// POST localhost:8080/produk/2 => Edit data produk
+// POST localhost:8080/produk/edit/1 => Edit data produk
 router.put('/edit/:id', produk.editDataProduk);
 
 // POST localhost:8080/produk/delete => Delete data produk
